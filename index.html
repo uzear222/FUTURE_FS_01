@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My protfolio</title>
-    <link ref="stylesheet" href="style.css" />
-    <link ref="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
 
 </head>
 <body>
-    <nav id="dekstop-nev">
+    <nav id="desktop-nav">
         <div class="logo">Uzear Saiyed</div>
         <div>
-            <ul class="nev-links">
+            <ul class="nav-links">
                 <li><a href="#About">About</a></li>
                 <li><a href="#expreance">Expreance</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contecr">contect</a></li>
             </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo" >Uzear Saiyed</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#About" onclick="toggleMenu()">About</a></li>
+                <li><a href="#expreance" onclick="toggleMenu()">Expreance</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contecr" onclick="toggleMenu()">contect</a></li>
+            </div>
         </div>
     </nav>
     <script src="script.js"></script>
