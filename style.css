@@ -5,14 +5,17 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 body {
     font-family: "Libertinus Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  
 }
 
 p {
@@ -37,6 +40,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
+  background-color: #353434; /* ✅ black background */
 }
 
 .nav-links {
@@ -46,25 +50,26 @@ nav {
 }
 
 a {
-  color: black;
+  color: #fff; /* ✅ white text */
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
-  color: grey;
+  color: grey; /* ✅ hover gray */
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: grey;
 }
 
 .logo {
   font-size: 2rem;
+  color: #fff; /* ✅ white logo */
 }
 
 .logo:hover {
   cursor: default;
 }
+
 
 /* HAMBURGER MENU */
 
@@ -84,12 +89,13 @@ a:hover {
   height: 24px;
   width: 30px;
   cursor: pointer;
+  color: white;
 }
 
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: white;
   transition: all 0.3 ease-in-out;
 }
 
@@ -166,20 +172,27 @@ section {
 #profile {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  align-items: center;
+  min-height: 100vh; /* ✅ full screen height */
+  width: 100vw; /* ✅ full screen width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ✅ no overflow */
+  background: url('./assets/bg-img.jpg') no-repeat center center;
+  background-size: cover; /* ✅ full cover without gaps */;
 }
 
 .section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+  display: none; /* ✅ hide profile pic */
 }
 
 .section__text {
-  align-self: center;
   text-align: center;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.629); /* ✅ optional overlay for readability */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .section__text p {
@@ -207,7 +220,15 @@ section {
   gap: 1rem;
 }
 
+
 /* ICONS */
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
 
 .icon {
   cursor: pointer;
@@ -319,6 +340,7 @@ section {
 
 #experience {
   position: relative;
+  padding: 2rem 0;
 }
 
 .experience-sub-title {
@@ -326,30 +348,169 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .experience-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center; /* ✅ center content horizontally */
 }
 
 .article-container {
   display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px; /* ✅ prevent overflow on large screens */
+  padding: 0 1rem; /* ✅ safe spacing on mobile */
+  box-sizing: border-box;
 }
 
 article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: rgb(250, 250, 250);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 article .icon {
+  width: 22px;
+  height: 22px;
+  cursor: default;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+article h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+article p {
+  font-size: 0.85rem;
+  color: rgb(85, 85, 85);
+  margin-bottom: 0.3rem;
+}
+
+article ul {
+  padding-left: 1.2rem;
+  margin: 0.3rem 0 0;
+}
+
+article ul li {
+  font-size: 0.85rem;
+  color: rgb(53, 53, 53);
+}
+
+/* PROJECTS SECTION */
+
+#projects {
+  position: relative;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 70%;
+  height: auto; /* ✅ Maintain aspect ratio */
+  display: block; /* ✅ Treat image as block element */
+  margin: 0 auto; /* ✅ Center horizontally */
+}
+
+.project-title {
+  margin: 1rem;
+  color: black;
+}
+
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+/* CONTACT SECTION */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250); /* ✅ fix: proper background color syntax */
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
   cursor: default;
 }
+
+.email-icon {
+  height: 2.5rem;
+}
+
+/* FOOTER NAVBAR SEPARATE STYLE */
+footer nav {
+  background-color: #fff; /* ✅ white background */
+  padding: 1rem 2rem;
+}
+
+footer nav .nav-links a {
+  color: black; /* ✅ black text in footer nav */
+}
+
+footer nav .nav-links a:hover {
+  color: grey; /* ✅ hover gray in footer nav */
+}
+
+/* Contact section ke links ka color fix */
+#contact a {
+  color: black; /* ✅ normal black text */
+  text-decoration: none;
+}
+
+#contact a:hover {
+  color: grey; /* ✅ hover gray */
+  text-decoration: underline;
+}
+
+/* FOOTER SECTION */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
