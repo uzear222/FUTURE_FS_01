@@ -111,21 +111,35 @@
     text-align: center;
   }
   /* ✅ Image still visible in mobile */
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  .section__text__p2 {
+  /* ✅ Mobile adjustments (max-width: 600px) */
+.section__pic-container {
+    width: 100%;          /* Parent ke full width me fit ho */
+    max-width: 300px;     /* Optional: image size limit */
+    height: auto;         /* Aspect ratio maintain ho */
+    display: flex;
+    justify-content: center; 
+    margin: 0 auto 1rem;  /* center aur bottom margin */
+}
+
+.section__pic-container img {
+    width: 100%;          /* Image container ke andar fit ho */
+    height: auto;         /* Aspect ratio maintain ho */
+    display: block;
+}
+
+.section__text__p2 {
     font-size: 1.25rem;
-  }
-  .title {
+}
+
+.title {
     font-size: 2rem;
-  }
-  .text-container {
+}
+
+.text-container {
     text-align: justify;
-  }
+    padding: 0 1rem;       /* Sides se thoda gap */
+}
+
 }
 
 /* ✅ Remove horizontal scroll */
